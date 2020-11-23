@@ -1,0 +1,23 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "Ce cours est constitué de 10 projets différents pour prendre en main React à partir d'un minimum de connaissances en JavaScript.\r Chaque projet est hébergé sous un répertoire git différent. Ce répertoire centralise les notes de cours.",
+  "main": "index.js",
+  "dependencies": {
+    "jest": "^26.6.3"
+  },
+  "scripts": {
+    "test": "jest",
+    "jstest": "jest javascript.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medotek/cours-react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/medotek/cours-react/issues"
+  },
+  "homepage": "https://github.com/medotek/cours-react#readme"
+}
