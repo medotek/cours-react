@@ -1,6 +1,11 @@
-.App {
-    background-color: bisque;
-}
 h1 {
     text-align:center;
+    font-family: 'Roboto', sans-serif;
+    color: #1752DA;
+    width:100%;
+    font-size: 72px;
+    background: rgb(12,54,219);
+    background: -webkit-linear-gradient(228deg, rgba(12,54,219,1) 0%, rgba(72,143,56,1) 100%, rgba(27,143,140,1) 100%);/*228deg, rgba(12,54,219,1) 0%, rgba(72,143,56,1) 0%, rgba(27,143,140,1) 100%);*/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
