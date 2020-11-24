@@ -64,11 +64,11 @@ yarn start
 
 *3. Créez un autre projet avec [Guppy](https://github.com/joshwcomeau/guppy). Quelle méthode préférez-vous ?*
 
-Je préfère créer un projet en ligne de commande c'est plus fun. Sinon pour trouver l'installateur de guppy c'est pas très ergo...
+```Je préfère créer un projet en ligne de commande c'est plus fun. Sinon pour trouver l'installateur de guppy c'est pas très ergo...```
 
 *4. Modifiez le projet React nouvellement créer pour supprimer le contenu actuel de l'application*
 
-- [x] Done
+```- [x] Done```
 
 *5. Créez un nouveau composant avec votre liste de cadeau pour le Père Noel.*
 

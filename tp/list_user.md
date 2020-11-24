@@ -7,22 +7,86 @@ Analysez le [code situé du projet](https://codesandbox.io/s/react-props-list-fr
 
 **1. Quelle ligne charge le fichier JSON dans le code ?**
 
+```
+La ligne 4
+```
+
 **2. Quelle est la structure de données du fichier JSON ?**
+
+```
+Collection qui peut contenir un objet (clé, valeur), une collection ou un tableau
+```
 
 **3. Justifiez le `User.propTypes`. Quelles données ne sont pas prises en compte ?**
 
+```
+Il annonce les types de chaque props et empêche l'assignation de mauvais type à une valeur. 
+
+Données non pris en compte :
+- login
+- timezone
+- coordinates
+- postcode
+- phone
+- registered
+```
+
 **4. Quelles données sont obligatoires pour construire le composant `User` ?**
+
+```
+Le nom :
+- title
+- first
+- last
+```
 
 **5. A quoi correspond `PropTypes.shape` ?**
 
+```
+PropTypes.shape décrit un objet dont les clés sont connues, en précisant les types de leurs valeurs.
+```
+
 **6. Pourquoi l'attribut contient deux accolades ?**
 
+```
+Parce qu'il faut désolidariser les objets pour leur assigner un type.
+```
 
 **7. Quel est le nom de l'opérateur qui transmet les données du composant `App` vers le composant `User`? Pourquoi est-ce dangereux d'abuser de cet opérateur ?**
 
+```
+Le Spread operator avant user
+récupère les attributs d'un user. il décompose le user courant et récupère tous les attributs (genre, name, location ...) tout ce dont il a besoin. 
+
+Lorsqu'on utilise la décomposition, il faut faire attention à ne pas dépasser le nombre maximal d'arguments du moteur JavaScript.
+```
 
 **8. Ajoutez un paragraphe `p` au composant `User` pour afficher la date de naissance sous la forme "Né le 27/02/1942" pour un homme ou "Née le 27/02/1942" pour une femme en utilisant une condition ternaire. Copiez le code ajouté dans ce document en guise de réponse.**
 
+```js
+function User(props) {
+  let formatter = new Intl.DateTimeFormat("fr-FR", {
+    year: "numeric",
+    month: "long",
+    day: "2-digit"
+  });
+  return (
+    ...
+          <p>
+            {this.formatter.format(Date.parse(props.dob.date))}
+          </p>
+    ...
+  );
+}
+
+User.propTypes = {
+  ...
+  dob: PropTypes.shape({
+    date: PropTypes.date,
+    age: PropTypes.number
+  })
+};
+```
 (Pensez à mettre votre code dans des balises Markdown  !!)
 
 ## Rédaction de tests
