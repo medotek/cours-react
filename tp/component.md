@@ -72,7 +72,7 @@ Je préfère créer un projet en ligne de commande c'est plus fun. Sinon pour tr
 
 *5. Créez un nouveau composant avec votre liste de cadeau pour le Père Noel.*
 
-[Ici](../tp2)
+[Ici](/tp2)
 
 *6. [Ajoutez une image](https://create-react-app.dev/docs/adding-images-fonts-and-files/) du Père Noel.*
 
