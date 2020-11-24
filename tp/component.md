@@ -5,6 +5,26 @@ Ce TP montre comment créer un projet React à partir de zéro. Vous allez crée
 
 *1. Installez `[node et npm](https://nodejs.org/en/download/)`, et `[yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable)` sur vos ordinateurs. Listez les étapes clés de l'installation, comme si vous rédigiez un tutoriel.**
 
+Pour un projet, il suffit de lancer la commande :
+```
+sudo apt-get update
+sudo apt-get install nodejs npm
+```
+Ensuite pour installer installer une version XX
+```
+wget -qO- https://deb.nodesource.com/setup_XX.x | sudo -E bash -
+sudo apt install -y nodejs
+```
+
+Pour installer yarn, on peut simplement utiliser npm qui est déjà installé avec nodejs :
+```
+npm install -g yarn // -g pour l'installer en global
+```
+
+Sinon sur Windows, télécharger l'installeur de nodejs puis celui de yarn... trop simple
+
+*2. [Quelle ligne de commande](https://github.com/facebook/create-react-app) faut-il lancer pour créer un projet React ?*
+
 On va installer le projet et lui un nom avec la commande suivante :
 ```
 npx create-react-app my-app
@@ -17,12 +37,13 @@ Ensuite accédons au répertoire du projet :
 ```
 cd my-app
 ```
-
-*2. [Quelle ligne de commande](https://github.com/facebook/create-react-app) faut-il lancer pour créer un projet React ?*
-
-Nous allons utiliser un script npm
+Nous allons utiliser un script npm pour lancer le projet
 ```
 npm start
+```
+ou
+```
+yarn start
 ```
 
 *3. Créez un autre projet avec [Guppy](https://github.com/joshwcomeau/guppy). Quelle méthode préférez-vous ?*
