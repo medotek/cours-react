@@ -23,6 +23,22 @@ npm install -g yarn // -g pour l'installer en global
 
 Sinon sur Windows, télécharger l'installeur de nodejs puis celui de yarn... trop simple
 
+___
+
+**PROBLEME avec la dépendance JEST**
+```
+npm uninstall -g jest
+```
+ou
+```
+yarn global remove jest
+```
+ou
+```
+rm -r node_modules/jest
+```
+____
+
 *2. [Quelle ligne de commande](https://github.com/facebook/create-react-app) faut-il lancer pour créer un projet React ?*
 
 On va installer le projet et lui un nom avec la commande suivante :
@@ -48,7 +64,11 @@ yarn start
 
 *3. Créez un autre projet avec [Guppy](https://github.com/joshwcomeau/guppy). Quelle méthode préférez-vous ?*
 
+Je préfère créer un projet en ligne de commande c'est plus fun. Sinon pour trouver l'installateur de guppy c'est pas très ergo...
+
 *4. Modifiez le projet React nouvellement créer pour supprimer le contenu actuel de l'application*
+
+- [x] Done
 
 *5. Créez un nouveau composant avec votre liste de cadeau pour le Père Noel.*
 
