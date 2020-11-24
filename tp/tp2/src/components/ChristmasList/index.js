@@ -8,21 +8,15 @@ class ChristmasList extends Component {
 
     render() {
 
-        const listes = ["Jouet", "Smartphone", "Téléviseur", "Radio"];
+        const listes = ["Jouet", "Smartphone", "Téléviseur", "Radio", "velo", "console.log", "Balançoire", "Livre de cuisine", "Dinde", "Un bon prof d'anglais"];
         const listItems = listes.map((item) =>  <li  key={item.toString()}>{item}</li>);
-
 
         return (
                 <ul className="ChristmasList">
                    { listItems };
-                   {/* { children } */}
                 </ul>
         )
 
     }
 }
-
-// ChristmasList.defautProps = {
-//     admin: false;
-// }
 export default ChristmasList;

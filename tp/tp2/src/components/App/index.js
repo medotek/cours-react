@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import ChristmasList from '../ChristmasList';
 import Header from '../Header';
 import './App.css';
+import Footer from '../Footer';
 
 class App extends Component {
     render() {
@@ -11,6 +12,7 @@ class App extends Component {
                 <div className='App'>
                     <Header />
                     <ChristmasList />
+                    <Footer/>
                 </div>
         )
     }

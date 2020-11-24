@@ -2,4 +2,16 @@ li {
     font-family: 'Roboto', sans-serif;
     list-style: none;
     font-size:24px;
+    font-weight:600;
+    color:rgb(255,255,255, 1);
+    margin:5px;
+    text-align:center;
+}
+
+.ChristmasList {
+    background: -webkit-linear-gradient(56deg, rgba(255,137,137,0.85) 0%, rgba(165,199,255,0.85) 100%, rgba(255,255,255,0) 100%);
+    width:50%;
+    border-radius: 10px;
+    padding:10px;
+    margin:0 auto;
 }
