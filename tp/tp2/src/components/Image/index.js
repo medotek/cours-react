@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './Image.css';
 
 class Image extends Component {
 
     render() {
-        const {link, alt, className} = this.props;
-        
+        const { link, alt, className } = this.props;
+
         return (
-            <img className={className} src={link} alt={alt}/>
+            <img className={className} src={link} alt={alt} />
         )
     }
 }
