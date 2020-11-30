@@ -92,7 +92,60 @@ User.propTypes = {
 ## Rédaction de tests
 **9. Lisez [les recettes de tests](https://fr.reactjs.org/docs/testing-recipes.html#gatsby-focus-wrapper). Rédigez un test pour vérifier que le composant `User` contient une image.**
 
+```js
+//import { User } from './App';
+
+it("affiche les données utilisateur", () => {
+  const fakeProps = {
+    name: {
+      first: "Edouard"
+    },
+    location: {
+      state: "Isère",
+      country: "FRANCE"
+    },
+    picture: {
+      medium: "https://randomuser.me/api/portraits/med/men/80.jpg"
+    }
+  };
+  act(() => {
+      render(<User {...fProps} />, container);
+  });
+
+  expect(container.querySelector("h4").textContent).toBe(fakeProps.name.first);
+  expect(container.querySelector("p").textContent).toBe(
+    fakeProps.location.state + ", " + fakeProps.location.country
+  );
+  expect(container.querySelector("img").getAttribute("src")).toBe(fakeProps.picture.medium);
+
+});
+```
+
 **10. Rédigez un autre test dans lequel vous créez le composant `User` avec le `name` de votre choix dans le `props` et vérifiez que le composant affiche bien le `name`.**
+
+```js
+it("s’affiche avec ou sans nom", () => {
+  const fakeProps = {
+    name: {
+      first: "Edouard"
+    },
+    location: {
+      state: "Isère",
+      country: "FRANCE"
+    },
+    picture: {
+      medium: "https://randomuser.me/api/portraits/med/men/80.jpg"
+    }
+  };
+  
+    act(() => {
+      render(<User {...fProps} />, container);
+    });
+  });
+  expect(container.querySelector("h4").textContent).toBe(fakeProps.name.first);
+});
+
+```
 
 **11. Faites un test de "capture d'instantanés" en suivant les indications de la documentation**
 

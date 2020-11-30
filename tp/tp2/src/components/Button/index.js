@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './Button.css'
-import newimg from '../../media/posey.jpg'
+import './Button.css';
+import newimg from '../../media/posey.jpg';
 
 const changeBG = () => {document.getElementById("header").style.backgroundImage = {newimg}};
 
