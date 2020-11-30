@@ -38,20 +38,7 @@ C'est une fonction qui initialise les états des props liés au formulaire et l'
 **2. Quelles sont les states et les props mis en jeu ? Indiquez leur valeur par défaut.**
 
 Props :
-- message = 
-```validateName(name) ou  validateName(email)```
-- canSubmit = ```!validateEmail(email) && !validateName(name);```
-- Input (styledcomp) = 
-```js
-styled.input`
-  padding: 0.5em;
-  margin: 0.5em;
-  color: ${(props) => (props.isValid && "cornflowerblue") || "palevioletred"};
-  background: papayawhip;
-  border: none;
-  border-radius: 3px;
-`;
-```
+Les paramètres des composants sont des props, les composants peuvent prendre la forme d'un composant react ou d'une fonction/classe qui retourne un composant jsx.
 
 State :
 - isSubmit = useState(false)
