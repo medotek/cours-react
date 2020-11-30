@@ -69,11 +69,12 @@ On peut passer un gestionnaire d’événements et d’autres fonctions dans les
 
 **6. Précisez étape par étape ce que fait React lorsque le champ nom est modifié.**
 
-- Initialisatuin avec une chaîne vide
-- l'utilisateur écrit un caractère
-- l'handler onChange est activé sur le champ de texte
-- Il appelle la fonction setName et il lui passe la valeur du champ en paramètre
-- setName étant le setter de notre état dans, il modifie la valeur de l'attribut name dans l'état du document
+L'Utilisateur rentre un caractère, ce qui produit l'évènement suivant :
+1 - le props onChange du composant NameField déclenche l'évènement, définit sur l'attribut.
+2 - La fonction setName (propriétée du composant NameField) est appelée par l'évènement avec le paramètre event.target.value
+3 - Le composant NameField va chercher la variable attribuée à sa propriété setName qui se trouve être la fonction setName() du même nom, setter de la variable d'état 'name'
+4 - Le setter va remplacer la valeur de la variable name avec la valeur qui lui a été placée en paramètre
+5 - La fonction render() va être appelée par setName et le NameField va être généré avec la nouvelle valeur de name
 
 **7. Expliquez la regex pour valider un email. Vous pouvez la recopier dans regex101.com pour vous aider.**
 
