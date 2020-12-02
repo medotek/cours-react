@@ -11,13 +11,14 @@ Notre version de `Link`, appelée `CustomLink` accepte un props `to` sous la for
 
 ```
 Pour faire un redirection on ajoute dans l'attribut history du DOM, 
-en injectant le nouveau chemin vers lequel l'utilisateur sera redirigé
+en injectant le nouveau chemin vers lequel l'utilisateur sera redirigé.
+
 ```
 
 
 Mais comment avoir accès à cet objet que vous venez d'évoquer ? Dans le cours, il était injecté par `Route`. Cette fois-ci, nous allons utiliser la fonction [`useHistory`](https://reactrouter.com/web/api/Hooks/usehistory). 
 ```
-Il faut y accéder depuis le render props de la route 
+On peut le faire en utlisant la fonction useHistory ou avec withRouter en fonction de l'utilisation d'une fonction ou d'une classe
 ```
 
 **2. Après avoir lu la documentation correspondante, décrivez le fonctionnement de cette fonction.**
@@ -25,7 +26,7 @@ Il faut y accéder depuis le render props de la route
 ```
 La fonction permet d'accéder directement au props history du render de la route, 
 qui nous permettra de modifier l'historique à nos souhaits.
-C'est-à-dire d'ajouter l'historique de navigation de l'utilisateur
+History permettra de modifier la navigation.
 ```
 
 **3. En utilisant cette fonction, devez-vous implémenter le `CustomLink` composant sous la forme d'une fonction ou d'une classe ?**
@@ -82,7 +83,9 @@ location et history, et renvoie un nouveau composant
 
 5.3 :
 
+```
 On peut utiliser les deux, mais on préfèrera utiliser une classe.
+```
 
 5.4
 
@@ -153,7 +156,39 @@ useRouteMatch()
 
 **7. Faites l'implémentation de `CustomRoute`, ajoutez les `propTypes`, testez la dans une codesandbox et copiez votre implémentation de `CustomRoute` dans ce document.**
 
+```jsx
+function CustomRoute(props) {
+  //let history = useHistory();
+  let location = useLocation();
+  let MyComponent = props.component;
 
+  const match = matchPath(location.pathname, {
+    path: props.path,
+    exact: true,
+    strict: false
+  });
+  return (
+    <>
+      {(() => {
+        if (match) {
+          return <MyComponent history={history} location={location} match={match} />;
+        }
+      })()}
+    </>
+  );
+}
+
+//...  App()
+  <CustomRoute path="/oui" component={Content}></CustomRoute>
+//... PropTypes de CustomLink +
+CustomRoute.propTypes = {
+  match: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
+  path: PropTypes.string.isRequired,
+  component: PropTypes.object.isRequired
+};
+```
 
 ## Tester le routage avec React
 
@@ -203,6 +238,10 @@ ReactDOM.render(
 ```
 
 **8. Ce code utilise `useParams`, que nous n'avons encore jamais utilisé. A quoi sert-il ?**
+
+```
+useParams est un hook qui retourne un tableau de clé/valeur de paramètres d'URL
+```
 
 **9. Créez un nouveau projet à partir de code.  Créez un test qui injecte `MemoryRouter` autour de `App`. Indiquez des URL à `MemoryRouter` et vérifiez que les posts affichent bien le contenu de l'URL.**
 
